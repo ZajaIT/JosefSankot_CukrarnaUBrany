@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cukrárna U Brány</title>
+
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+  scroll-behavior: smooth;
+}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fffdfb;
+      color: #3d2b2b;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+#galerie {
+  padding-top: 40px;
+  scroll-margin-top: 160px;
+}
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 70px;
+      color: #6f5d5d;
+    }
+
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+
+.ornament-divider img {
+  width: 520px;
+  opacity: 0.9;
+}
+
+    /* NAVBAR */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(255, 253, 251, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(111, 93, 93, 0.08);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: #5b2e37;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+.logo img {
+  width: 34px;
+  height: auto;
+  display: block;
+}
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+      color: #4d3a3a;
+    }
+
+    .nav-links a:hover {
+      color: #a15c6a;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-top: 120px;
+    }
+
+    .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 250, 248, 0.82) 0%,
+      rgba(255, 250, 248, 0.72) 38%,
+      rgba(255, 250, 248, 0.38) 68%,
+      rgba(255, 250, 248, 0.18) 100%
+    ),
+    url('vitrina-zakusky.jpg') center/cover;
+  z-index: -1;
+}
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid rgba(91, 46, 55, 0.2);
+      margin-bottom: 28px;
+      color: #5b2e37;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.95;
+      margin-bottom: 30px;
+      color: #3d2328;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 1.1rem;
+      color: #5e4b4b;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border: 1px solid #5b2e37;
+      transition: 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #5b2e37;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #7a4550;
+    }
+
+    .btn-secondary:hover {
+      background: #5b2e37;
+      color: white;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      text-align: left;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: #5e4b4b;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .stamp {
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 180px;
+      opacity: 0.9;
+      transform: rotate(-10deg);
+    }
+
+    /* OFFER */
+
+    .offer {
+      background: #fcf7f4;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .offer-card {
+      border: 1px solid rgba(91, 46, 55, 0.08);
+      padding: 40px 30px;
+      background: white;
+      transition: 0.3s ease;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .offer-card h3 {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      color: #5b2e37;
+    }
+
+    .offer-card p {
+      color: #6b5a5a;
+      font-size: 0.95rem;
+    }
+
+.divider-wrapper {
+  position: relative;
+  z-index: 5;
+}
+
+.divider-wrapper .ornament-divider {
+  transform: translateY(-33.5px);
+  margin-bottom: -22px;
+}
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.cenik-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.cenik-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.cenik-center {
+  position: relative;
+  z-index: 3;
+}
+
+.cenik-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  z-index: 3;
+}
+
+.cenik-side {
+  position: absolute;
+  width: 320px;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.left {
+  left: 120px;
+  top: 50%;
+  transform: translateY(-20%) rotate(-8deg);
+}
+
+.right {
+  right: 120px;
+  top: 50%;
+  transform: translateY(-20%) rotate(8deg);
+}
+
+#cenik {
+  scroll-margin-top: 110px;
+}
+
+    /* REVIEWS */
+
+    .reviews {
+      background: #4a2b31;
+    }
+
+.reviews h2 {
+  color: white;
+}
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 40px;
+      border: 1px solid rgba(91, 46, 55, 0.08);
+    }
+
+    .stars {
+      color: #b27a86;
+      margin-bottom: 18px;
+      letter-spacing: 3px;
+    }
+
+    .review-card p {
+      color: #5e4b4b;
+      margin-bottom: 20px;
+    }
+
+    .review-author {
+      font-weight: 600;
+      color: #5b2e37;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-box {
+      border-bottom: 1px solid rgba(91, 46, 55, 0.1);
+      padding-bottom: 25px;
+    }
+
+    .contact-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #5b2e37;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    input,
+    textarea {
+      border: 1px solid rgba(91, 46, 55, 0.15);
+      padding: 18px;
+      font-family: inherit;
+      background: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      margin-top: 60px;
+    }
+
+    /* FOOTER */
+
+    footer {
+  background: #4a2b31;
+  color: white;
+  padding: 70px 0 40px;
+}
+
+.footer-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #f1d7dc;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.footer-location {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding-bottom: 25px;
+}
+
+.footer-location h4 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #f4d8dd;
+}
+
+.footer-location p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.88;
+  margin-bottom: 12px;
+}
+
+.footer-copy {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.footer-content {
+  width: min(1100px, 92%);
+  margin: auto;
+}
+
+    /* ANIMATIONS */
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 992px) {
+
+      .about-grid,
+      .contact-grid,
+      .offer-grid,
+      .reviews-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .nav-links {
+        gap: 16px;
+        font-size: 0.85rem;
+      }
+
+      .stamp {
+        width: 130px;
+        right: 10px;
+        bottom: -20px;
+      }
+
+.cenik-side {
+  display: none;
+}
+    }
+
+    @media (max-width: 768px) {
+
+      section {
+        padding: 90px 0;
+      }
+
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-text h2 {
+        text-align: center;
+      }
+
+      .gallery-grid img {
+        height: 260px;
+      }
+
+      .review-card,
+      .offer-card {
+        padding: 30px;
+      }
+
+.footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-title {
+    font-size: 2rem;
+  }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#home" class="logo">
+  <img src="logo.png" alt="Logo">
+  <span>Cukrárna U Brány</span>
+</a>
+
+      <div class="nav-links">
+        <a href="#onas">O nás</a>
+        <a href="#nabidka">Nabídka</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content fade-in">
+
+        <div class="hero-badge">
+          Tradice od roku 1991
+        </div>
+
+        <h1>
+          Sladké chvíle<br>
+          s chutí tradice
+        </h1>
+
+        <p>
+          Tradiční cukrárna a pekařství v srdci Pelhřimova.
+          Každý den pro vás připravujeme čerstvé zákusky,
+          dorty, pečivo i poctivé domácí dezerty.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#nabidka" class="btn btn-primary">Naše nabídka</a>
+          <a href="#kontakt" class="btn btn-secondary">Kontakt</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="onas">
+    <div class="container about-grid fade-in">
+
+      <div class="about-text">
+        <h2>Rodinná tradice</h2>
+
+        <p>
+          Cukrárna U Brány působí v Pelhřimově již od roku 1991.
+          Naše výroba stojí na poctivých surovinách,
+          tradičních receptech a každodenní čerstvosti.
+        </p>
+
+        <p>
+          Nabízíme široký výběr zákusků, dortů,
+          pečiva i zakázkové výroby pro svatby,
+          oslavy a výjimečné chvíle.
+        </p>
+
+        <p>
+          Přijďte si posedět v příjemném prostředí, nechat se obsloužit, vychutnat si gurmet kávu značky Varesina a potěšit se tradičními českými i netradičními zákusky inspirovanými italskými cukráři.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="nabidka-zakusku.jpg" alt="Zákusky">
+        <img src="razitko.png" alt="Razítko" class="stamp">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="offer" id="nabidka">
+    <div class="container">
+
+<div class="ornament-divider fade-in">
+  <img src="ornament.png" alt="">
+</div>
+
+      <h2 class="fade-in">Co nabízíme</h2>
+      <p class="section-subtitle fade-in">
+        Každý den připravujeme čerstvé dezerty,
+        dorty, pečivo i tradiční české zákusky.
+      </p>
+
+      <div class="offer-grid">
+
+        <div class="offer-card fade-in">
+          <h3>Zákusky</h3>
+          <p>
+            Větrníky, věnečky, laskonky,
+            punčové řezy, kremrole a další tradiční speciality.
+          </p>
+        </div>
+
+        <div class="offer-card fade-in">
+          <h3>Dorty</h3>
+          <p>
+            Zakázkové dorty, narozeninové dorty,
+            svatební dorty i modelované dekorace.
+          </p>
+        </div>
+
+        <div class="offer-card fade-in">
+           <h3>Káva</h3>
+           <p>
+             Gurmet káva značky Varesina,
+             ze které vám připravíme třeba pravé italské espresso.
+           </p> 
+        
+
+       </div>
+    </div>
+  </section>
+
+<div class="divider-wrapper">
+  <div class="ornament-divider fade-in">
+    <img src="ornament.png" alt="">
+  </div>
+</div>
+
+  <section id="galerie">
+    <div class="container">
+
+      <h2 class="fade-in">Galerie</h2>
+      <p class="section-subtitle fade-in">
+        Ukázka našich sladkých specialit.
+      </p>
+
+      <div class="gallery-grid fade-in">
+        <img src="dortik1.jpg" alt="Domácí dortík">
+        <img src="dortiky-mandarinky.jpg" alt="Zákusky s mandarinkami">
+        <img src="dortik-jahody.jpg" alt="Dort s jahodami">
+      </div>
+
+    </div>
+  </section>
+
+<section>
+  <div class="container cenik-wrapper">
+
+    <img src="dort-left.png"
+         alt=""
+         class="cenik-side left fade-in">
+
+    <div class="cenik-center">
+
+      <h2 class="fade-in" id="cenik">Ceník dortů</h2>
+
+      <div class="ornament-divider fade-in">
+        <img src="ornament.png" alt="">
+      </div>
+
+      <img src="cenik-dortu.png"
+           alt="Ceník dortů"
+           class="cenik-image fade-in">
+
+    </div>
+
+    <img src="dort-right.png"
+         alt=""
+         class="cenik-side right fade-in">
+
+  </div>
+</section>
+
+  <section class="reviews" id="recenze">
+    <div class="container">
+
+      <h2 class="fade-in">Recenze zákazníků</h2>
+
+      <div class="reviews-grid">
+
+  <div class="review-card fade-in">
+    <div class="stars">★★★★★</div>
+    <p>
+      Přátelská obsluha, dobrá káva a lahodné pečivo.
+      Kousek za centrem města, příjemné místo k posezení.
+    </p>
+    <div class="review-author">Robin O.</div>
+  </div>
+
+  <div class="review-card fade-in">
+    <div class="stars">★★★★★</div>
+    <p>
+      V rámci Pelhřimova jednoznačně skrytý poklad.
+      Dobrá nabídka, výborné ceny a větrník na jedničku s hvězdičkou.
+      Obsluha milá a ochotná. Prostředí příjemné.
+      Rozhodně doporučuji.
+    </p>
+    <div class="review-author">Peter R.</div>
+  </div>
+
+  <div class="review-card fade-in">
+    <div class="stars">★★★★★</div>
+    <p>
+      Příjemné prostředí, sympatická a příjemná obsluha.
+      Zákusky čerstvé, lehké a chuťově vynikající.
+    </p>
+    <div class="review-author">Šárka L.</div>
+  </div>
+
+</div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+
+      <h2 class="fade-in">Kontakt</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-info fade-in">
+
+          <div class="contact-box">
+            <h3>Cukrárna U Brány</h3>
+            <p>
+              Tylova ulice 259<br>
+              393 01 Pelhřimov
+            </p>
+          </div>
+
+          <div class="contact-box">
+            <h3>Kontakty</h3>
+            <p>
+              Josef Sankot, Tel.: 603 510 355<br>
+              Šárka Dvořáková, Tel.: 702 814 167<br><br>
+              josef.sankot@seznam.cz
+            </p>
+          </div>
+
+          <div class="contact-box">
+            <h3>Otevírací doba</h3>
+            <p>
+              Po – Pá: 8:00 – 17:00
+            </p>
+          </div>
+
+        </div>
+
+        <form class="fade-in">
+          <input type="text" placeholder="Vaše jméno">
+          <input type="email" placeholder="Váš e-mail">
+          <textarea placeholder="Vaše zpráva"></textarea>
+          <button class="btn btn-primary">Odeslat zprávu</button>
+        </form>
+
+      </div>
+
+      <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.9037976942336!2d15.220860675412814!3d49.4296327603385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ce42c5a4c72b3%3A0x7c0900a6837dcb06!2zQ3VrcsOhcm5hICJVIEJyw6FueSI!5e0!3m2!1scs!2shr!4v1778329085371!5m2!1scs!2shr"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+  </section>
+
+  <footer>
+  <div class="container footer-content">
+
+    <h3 class="footer-title">Naše provozovny</h3>
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <div class="footer-location">
+          <h4>Pekařská výroba</h4>
+          <p>
+            Masarykovo náměstí 2, 393 01 Pelhřimov
+            
+          </p>
+
+          <p>
+            Ing. Josef Sankot, Tel.: 603 510 355<br>
+            
+            Email: josef.sankot@seznam.cz
+          </p>
+        </div>
+
+        <div class="footer-location">
+          <h4>Cukrářská výroba</h4>
+          <p>
+            Tylova ulice 259, 393 01 Pelhřimov
+            
+          </p>
+
+          <p>
+            Martina Davidová, Tel.: 722 691 604
+            
+          </p>
+        </div>
+
+        <div class="footer-location">
+          <h4>Prodejna pečiva a cukrárna</h4>
+          <p>
+            Masarykovo náměstí 2, 393 01 Pelhřimov
+            
+          </p>
+
+          <p>
+            Kateřina Svobodová, Tel: 732 140 534<br>
+            Jana Lešková, Tel: 606 380 329
+          </p>
+
+          <p>
+            Po – Pá: 7.00 – 17.00<br>
+            So – Ne: 9.00 – 18.00       <small>(pouze v letním období od 1.5. do 30.9.)</small>
+            
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-column">
+
+        <div class="footer-location">
+          <h4>Prodejna pečiva U Brány</h4>
+          <p>
+            Poděbradova ulice, 393 01 Pelhřimov
+            
+          </p>
+
+          <p>
+            Miroslava Truplová, Tel.: 604 555 192
+            
+          </p>
+
+          <p>
+            Po – Pá: 6.00 – 17.00
+          </p>
+        </div>
+
+        <div class="footer-location">
+          <h4>Cukrárna U Brány</h4>
+          <p>
+            Tylova ulice 259, 393 01 Pelhřimov
+            
+          </p>
+
+          <p>
+            Šárka Dvořáková, Tel.: 702 814 167
+            
+          </p>
+
+          <p>
+            Po – Pá: 8.00 – 17.00
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="footer-copy">
+      © 2026 Cukrárna U Brány • Tradiční cukrárna a pekařství od roku 1991
+    </p>
+
+  </div>
+</footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    document.querySelectorAll('.fade-in').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
+```
+
+# Obrázky
+
+Ulož do stejné složky:
+
+* vitrina-zakusky.jpg
+* razitko.png
