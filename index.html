@@ -1003,15 +1003,44 @@
 
         </div>
 
-        <form class="fade-in">
+        <form
+  class="fade-in"
+  action="https://formspree.io/f/mjgdgzvl"
+  method="POST"
+>
 
-          <h3 class="form-title">Napište nám</h3>
-          
-          <input type="text" placeholder="Vaše jméno">
-          <input type="email" placeholder="Váš e-mail">
-          <textarea placeholder="Vaše zpráva"></textarea>
-          <button class="btn btn-primary">Odeslat zprávu</button>
-        </form>
+  <h3 class="form-title">Napište nám</h3>
+
+  <input
+    type="text"
+    name="jmeno"
+    placeholder="Vaše jméno"
+    required
+  >
+            <input
+    type="tel"
+    name="telefon"
+    placeholder="Telefon"
+  >
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Váš e-mail"
+    required
+  >
+
+  <textarea
+    name="zprava"
+    placeholder="Vaše zpráva"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn btn-primary">
+    Odeslat zprávu
+  </button>
+
+</form>
 
       </div>
 
