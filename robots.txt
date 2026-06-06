@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cukrarna-ubrany.cz/sitemap.xml
