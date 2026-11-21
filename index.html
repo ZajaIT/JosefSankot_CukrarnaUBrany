@@ -800,18 +800,99 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Bakery",
-  "name": "Cukrárna U Brány",
-  "url": "https://cukrarna-ubrany.cz",
-  "telephone": "+420702814167",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Tylova 259",
-    "addressLocality": "Pelhřimov",
-    "postalCode": "39301",
-    "addressCountry": "CZ"
-  },
-  "openingHours": "Mo-Fr 08:00-17:00"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cukrarna-ubrany.cz/#organization",
+      "name": "Cukrárna U Brány s.r.o.",
+      "url": "https://cukrarna-ubrany.cz/"
+    },
+    {
+      "@type": "Bakery",
+      "@id": "https://cukrarna-ubrany.cz/#cukrarna-tylova",
+      "name": "Cukrárna U Brány",
+      "url": "https://cukrarna-ubrany.cz/",
+      "telephone": "+420702814167",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tylova 259",
+        "addressLocality": "Pelhřimov",
+        "postalCode": "393 01",
+        "addressCountry": "CZ"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "parentOrganization": {
+        "@id": "https://cukrarna-ubrany.cz/#organization"
+      }
+    },
+    {
+      "@type": "Bakery",
+      "@id": "https://cukrarna-ubrany.cz/#prodejna-namesti",
+      "name": "Prodejna pečiva a cukrárna",
+      "telephone": "+420732140534",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Masarykovo náměstí 2",
+        "addressLocality": "Pelhřimov",
+        "postalCode": "393 01",
+        "addressCountry": "CZ"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "07:00",
+        "closes": "17:00"
+      },
+      "parentOrganization": {
+        "@id": "https://cukrarna-ubrany.cz/#organization"
+      }
+    },
+    {
+      "@type": "Bakery",
+      "@id": "https://cukrarna-ubrany.cz/#prodejna-podebradova",
+      "name": "Prodejna pečiva U Brány",
+      "telephone": "+420604555192",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Poděbradova ulice",
+        "addressLocality": "Pelhřimov",
+        "postalCode": "393 01",
+        "addressCountry": "CZ"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "06:00",
+        "closes": "17:00"
+      },
+      "parentOrganization": {
+        "@id": "https://cukrarna-ubrany.cz/#organization"
+      }
+    }
+  ]
 }
 </script>
 </head>
