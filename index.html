@@ -762,6 +762,11 @@
   height: 260px;
   object-fit: cover;
 }
+  .gallery-grid img:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - 18px) / 2);
+}
 
 }
   </style>
